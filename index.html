@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20252c">
+  <meta name="description" content="Arquivo digital de personagens.">
+  <title>Personnel Archive — Arquivo de Personagens</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="Voltar ao arquivo">
+      <span class="brand-icon" aria-hidden="true">▤</span>
+      <span>
+        <strong>PERSONNEL ARCHIVE</strong>
+        <small>DATABASE / REGISTROS DE PERSONAGENS</small>
+      </span>
+    </a>
+    <span class="system-status"><span class="status-dot"></span> SISTEMA ONLINE</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">ARQUIVO DIGITAL · ACESSO PÚBLICO</p>
+      <h1>Registro de indivíduos</h1>
+      <p class="intro-copy">Consulte os registros disponíveis no arquivo.</p>
+    </section>
+
+    <section class="toolbar" aria-label="Ferramentas de pesquisa">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Pesquisar por nome, código ou descrição..." autocomplete="off">
+      </label>
+      <span id="resultCount" class="result-count" aria-live="polite"></span>
+    </section>
+
+    <section id="characterList" class="character-list" aria-label="Lista de personagens"></section>
+    <section id="emptyState" class="empty-state" hidden>
+      <span class="empty-icon" aria-hidden="true">⌕</span>
+      <h2>Nenhum registro encontrado</h2>
+      <p>Tente pesquisar usando outro termo.</p>
+    </section>
+
+    <section id="detailView" class="detail-view" hidden aria-labelledby="detailName">
+      <button id="backButton" class="back-button" type="button">← Voltar aos registros</button>
+      <article class="detail-card">
+        <div class="detail-image-wrap">
+          <img id="detailImage" class="detail-image" alt="">
+          <p id="detailImageCaption" class="image-caption"></p>
+        </div>
+        <div class="detail-content">
+          <p id="detailCode" class="eyebrow"></p>
+          <h2 id="detailName"></h2>
+          <p id="detailStatus" class="status-label"></p>
+          <p id="detailDescription" class="detail-description"></p>
+          <dl id="detailFacts" class="facts"></dl>
+          <div id="detailExtraWrap" class="extra-wrap" hidden>
+            <h3>Observações</h3>
+            <p id="detailExtra"></p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>PERSONNEL ARCHIVE</span>
+    <span>REGISTROS VISÍVEIS · <span id="footerYear"></span></span>
+  </footer>
+
+  <noscript>Este site precisa de JavaScript ativado para exibir os registros.</noscript>
+</body>
+</html>
